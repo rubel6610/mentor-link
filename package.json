@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "predev": "prisma generate",
-    "dev": "node api.js && tsx watch ./src/server.ts",
+    "dev": "node init && tsx watch ./src/server.ts",
     "prebuild": "prisma generate",
-    "build": "node api.js && tsc",
-    "start": "node api.js && node dist/server.js",
+    "build": "node init && tsc",
+    "start": "node init && node dist/server.js",
     "seed": "tsx ./src/seed/seedAdmin.ts",
     "stripe:webhook": "stripe listen --forward-to localhost:5000/webhook",
     "postinstall": "prisma generate"
@@ -19,6 +19,7 @@
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
+    "node-fetch": "^3.3.2",
     "pg": "^8.20.0",
     "stripe": "^22.1.0"
   },
